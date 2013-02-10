@@ -1,0 +1,52 @@
+#!/bin/bash
+
+USAGE='Usage: deploy'
+
+if [ $# -gt 0 ]
+then
+        echo $USAGE
+        exit 1
+fi
+
+# Find some things...
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+SOURCE_DIR="$( cd $SCRIPT_DIR && cd .. && pwd )"
+APP_DIR=/var/www/wedding
+
+WSGI_FILE=$SCRIPT_DIR/wedding.wsgi
+SITE_FILE=$SCRIPT_DIR/apache-site
+APP_FILE=$SOURCE_DIR/wedding.py
+
+TEMPLATES=$SOURCE_DIR/templates
+MEDIA=$SOURCE_DIR/media
+
+
+# Debug vars
+echo $SCRIPT_DIR
+
+
+# Copy Application files to deployment directory
+if [ -d $APP_DIR ]
+then
+        rm -rf $APP_DIR
+fi
+
+mkdir $APP_DIR
+
+cp $APP_FILE $APP_DIR
+cp $WSGI_FILE $APP_DIR
+
+cp -R $TEMPLATES $APP_DIR
+cp -R $MEDIA $APP_DIR
+
+
+# Update site
+a2dissite wedding
+
+cp $SITE_FILE /etc/apache2/sites-available/wedding
+
+a2ensite wedding
+/etc/init.d/apache2 reload
+
+exit 0
+

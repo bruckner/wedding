@@ -1,0 +1,16 @@
+<VirtualHost *:80>
+    ServerName bruckhauser.com
+
+    WSGIDaemonProcess wedding user=wedding group=wedding threads=5
+    WSGIScriptAlias / /var/www/wedding/wedding.wsgi
+
+    Alias /media /var/www/wedding/media 
+
+    <Directory /var/www/wedding>
+        WSGIProcessGroup wedding
+        WSGIApplicationGroup %{GLOBAL}
+        Order deny,allow
+        Allow from all
+    </Directory>
+</VirtualHost>
+
