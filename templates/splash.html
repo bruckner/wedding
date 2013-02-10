@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block head %}
+<style>
+  body {
+    background-color: #EE3C96;
+  }
+  .center {
+    margin: 0 auto;
+    text-align: center;
+  }
+  .splash {
+    margin: 30px auto;
+    width: 896px;
+    height: 700px;
+    background: url("/media/FunkyGraduation.png");
+    border: 4px solid black;
+  }
+</style>
+{% endblock head %}
+
+{% block body %}
+<div class="center">
+  <div class="splash" title="Laura Burkhauser & Daniel Bruckner's wedding will be held 17 August 2013 at the Lawrence Hall of Science in Berkeley, California"></div>
+  <a href="/welcome">Continue to the Site...</a>
+</div>
+{% endblock body %}
+
+{% block scripts %}
+<script type="text/javascript">
+(function ($) {
+  var sp = $('.splash');
+
+  function resizeSplash() {
+    var w = $(window).width(),
+        h = $(window).height(),
+        ratio = 896.0 / 700,
+        width = (w/h > ratio ? h * ratio : w) - 60 * ratio;
+    sp.css('background-size', width)
+      .css('width', width)
+      .css('height', width / ratio);
+  }
+
+  resizeSplash();
+
+  $(window).resize(resizeSplash);
+
+})(jQuery);
+</script>
+{% endblock scripts %}
