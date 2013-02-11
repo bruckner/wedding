@@ -1,0 +1,30 @@
+@font-face {
+        font-family: "Linden Hill";
+        src: url("/media/fonts/Linden Hill.otf");
+        font-style: normal;
+}
+@font-face {
+        font-family: "Linden Hill";
+        src: url("/media/fonts/Linden Hill Italic.otf");
+        font-style: italic;
+}
+@font-face {
+        font-family: "League Gothic";
+        src: url('/media/fonts/LeagueGothic-Regular.otf');
+        font-stretch: normal;
+        font-style: normal;
+}
+@font-face {
+        font-family: "League Gothic Condensed";
+        src: url('/media/fonts/LeagueGothic-CondensedRegular.otf');
+}
+@font-face {
+        font-family: "League Gothic";
+        src: url('/media/fonts/LeagueGothic-Italic.otf');
+        font-style: italic;
+}
+@font-face {
+        font-family: "League Gothic Condensed";
+        src: url('/media/fonts/LeagueGothic-CondensedItalic.otf');
+        font-style: italic;
+}
