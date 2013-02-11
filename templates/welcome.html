@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+
+{% block head %}
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  .splash {
+    margin: 0;
+    width: 1419px;
+    height: 1419px;
+    background: url('/media/img/bathrobes_enhanced_cropped.jpg');
+  }
+  .menu {
+    padding-top: 24px;
+    width: 100%;
+    font-family: "League Gothic", Helvetica, sans-serif;
+    font-size: 48pt;
+    color: white;
+    text-indent: -1em;
+  }
+  .menu th {
+    font-family: "Linden Hill", Garamond, serif;
+    font-style :italic;
+    font-weight: normal;
+    font--size: 60pt;
+  }
+  .menu td {
+    text-align: center;
+    font-weight: bold;
+  }
+  .menu a {
+    text-decoration: none;
+    color: inherit;
+  }
+  .menu a:hover {
+    color: #E10F5B;
+  }
+  .condensed {
+    font-family: "League Gothic Condensed", Impact, sans-serif;
+    text-indent: 0;
+  }
+</style>
+{% endblock head %}
+
+
+{% block body %}
+<div class="container">
+  <div class="splash">
+    <table class="menu">
+      <tr><th>Laura & Dan</th></tr>
+      <tr><td><a href="/work-in-progress">WELCOME</a></td></tr>
+      <tr><td><a href="/work-in-progress">FUNSIES</a></td></tr>
+      <tr><td><a href="/work-in-progress">VENUE</a></td></tr>
+      <tr><td><a href="/work-in-progress">SCHEDULE</a></td></tr>
+      <tr><td><a href="/work-in-progress">ACCOMODATIONS</a></td></tr>
+      <tr><td><a href="/work-in-progress">GUESTS</a></td></tr>
+      <tr><td><a href="/work-in-progress">REGISTRY</a></td></tr>
+      <tr><td><a href="/work-in-progress">#bruckhauser</a></td></tr>
+      <tr><td><a href="/work-in-progress">CAT PICTURES</a></td></tr>
+    </table>
+  </div>
+</div>
+{% endblock body %}
+
+{% block scripts %}
+<script type="text/javascript">
+(function ($) {
+  var $sp = $('.splash'),
+      $menu = $('.menu');
+
+  function resizeSplash() {
+    var h = $(window).height(),
+        w = $(window).width(),
+        ratio = 1419.0 / 1084,
+        width = w/h < ratio ? h * ratio : w,
+        height = w/h < ratio ? h : w / ratio;
+
+    $sp.css('background-size', width)
+        .css('width', width)
+        .css('height', height);
+    $menu.css('width', w);
+
+    if (parseInt(w) < 600) {
+      $menu.find('td').addClass('condensed');
+      $menu.find('th').addClass('condensed');
+    } else {
+      $menu.find('td').removeClass('condensed');
+      $menu.find('th').removeClass('condensed');
+    }
+  }
+  resizeSplash();
+  $(window).resize(resizeSplash);
+
+})(jQuery);
+</script>
+{% endblock scripts%}
+
