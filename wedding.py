@@ -11,8 +11,11 @@ def splash():
 
 @app.route("/welcome")
 def welcome():
-    return render_template("index.html")
+    return render_template("welcome.html")
 
+@app.route("/work-in-progress")
+def wip():
+    return render_template("construction.html")
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0")
