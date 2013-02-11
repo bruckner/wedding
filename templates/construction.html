@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <style>
+      body {
+        background-color: #D5681F;
+      }
+      .kitty {
+        margin: auto;
+        width: 484px;
+        height: 530px;
+        background: url("/media/img/kitty-licking.jpg");
+        background-size: 484px 530px;
+        cursor: pointer;
+      }
+      .kitty:hover {
+        background: url("/media/img/kitty-waving.jpg");
+        background-size: 484px 530px;
+      }
+    </style>
+{% endblock head %}
+{% block body %}
+<a href="/welcome"><div class="kitty" title="Come back soon!"></div></a>
+{% endblock body %}
