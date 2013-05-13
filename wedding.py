@@ -55,6 +55,10 @@ def wip():
 def about():
     return render_template("about.html")
 
+@app.route("/robots.txt")
+def robots():
+    return render_template("robots.txt")
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0")
 
