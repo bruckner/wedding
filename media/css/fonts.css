@@ -28,3 +28,7 @@
         src: url('/media/fonts/LeagueGothic-CondensedItalic.otf');
         font-style: italic;
 }
+@font-face {
+        font-family: "Chunk";
+        src: url('/media/fonts/Chunk.otf');
+}

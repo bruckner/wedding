@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+{% block head %}
+<style>
+body {
+  background-color: #B0A890;
+  font-family: "Chunk", "Courier New", serif;
+  font-size: 20px;
+  color:#604840;
+}
+a {
+  text-decoration: none;
+  color: #214ECE;
+}
+a:hover {
+  text-decoration: underline;
+}
+h1 {
+  padding: 10px 0;
+  font-size: 44px;
+  color: #CE4E21;
+  text-align: right;
+}
+.container {
+  margin: 24px auto;
+  padding: 36px 48px;
+  width: 500px;
+  background-color: #F0FFFF;
+  border: 1px solid #E8FFE8;
+}
+.banner {
+  width: 100%;
+  border: 16px solid white;
+}
+#banner1 {
+  background-image: url("/media/img/homecoming.jpg");
+  border-color: #CE4E21;
+}
+#banner2 {
+  background-image: url("http://www.berkeleyplaques.org/uploads/images/b_Downtown/ShattuckHotel_01.jpg");
+  border-color: #E0E020;
+}
+#banner3 {
+  background-image: url("http://www.berkeleyplaques.org/uploads/images/b_Downtown/ShattuckHotel_07.jpg");
+  border-color: #21CE4E;
+}
+</style>
+{% endblock head %}
+
+
+{% block body %}
+<div class="container">
+  <a href="/welcome" class="back">« Back to Main Page</a>
+  <div class="banner" id="banner1"></div>
+  <h1>Hello, there!</h1>
+  <p>
+    To help with arrangements, we've reserved a block of rooms at <a href="http://hotelshattuckplaza.com">Hotel Shattuck</a> in downtown Berkeley.
+  </p>
+  <div class="banner" id="banner2"></div>
+  <h1 style="color: #E0E020;">Hotel Shattuck <span style="font-size: 16px;">ca. 1909</span></h1>
+  <p>
+  To reserve a single or double room at discounted rate ($157/night + tax) for Friday and Saturday, August 16-17th:
+  </p>
+  <dl>
+    <dt>online:</dt><dd>follow <a href="">this link</a></dd>
+    <dt>by phone at:</dt><dd><span style="color:#214ECE;">(866) 466-9199</span> or <span style="color:#214ECE;">(510) 845-7300</span> ask for the Bruckner-Burkhauser block.</dd>
+  </p>
+  <h1 style="color:#21CE4E;">Rates <span style="font-size: 16px;">...in ca. 1909 dollars</span></h1>
+  <div class="banner" id="banner3"></div>
+  <div style="height:12px;"></div>
+  <a href="/welcome" class="back">« Back to Main Page</a>
+</div>
+{% endblock body %}
+
+
+{% block scripts %}
+<script type="text/javascript" src="/media/js/sizeBanner.js"></script>
+<script type="text/javascript">
+(function ($) {
+
+  /* Set banner height */
+  sizeBanner($('#banner1'), 720, 551);
+  sizeBanner($('#banner2'), 580, 367);
+  sizeBanner($('#banner3'), 580, 289);
+
+})(jQuery);
+</script>
+{% endblock scripts %}

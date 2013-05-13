@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% block head %}
+<style>
+body {
+  background-color: #E4EBFF;
+  font-family: "Linden Hill", Garamond, serif;
+}
+a {
+  text-decoration: none;
+  color: #214ECE;
+}
+a:hover {
+  text-decoration: underline;
+}
+h1 {
+  padding: 10px 0;
+  font-size: 44px;
+  color: #CE4E21;
+  text-align: right;
+}
+.container {
+  margin: 24px auto;
+  padding: 36px 48px;
+  width: 500px;
+  background-color: #FFFFF0;
+  border: 1px solid #E8FFE8;
+}
+.banner {
+  width: 100%;
+  border: 16px solid white;
+}
+#banner1 {
+  background-image: url("http://www.ci.berkeley.ca.us/uploadedImages/City_Manager/Level_3_-_General/BayView_Must_Use_with_Credit_to_Haas.jpg");
+  border-color: #A9CF7F;
+}
+#banner2 {
+  background-image: url("/media/img/horses.jpg");
+  border-color: #FFD1A8;
+}
+em {
+  font-weight: bold;
+  font-style: normal;
+  color: #A9CF7F;
+}
+</style>
+{% endblock head %}
+
+
+{% block body %}
+<div class="container">
+  <a style="float:left;" href="/welcome" class="back">« Back to Main Page</a>
+  <h1 style="color:#C0C8E0;">Travel</h1>
+  <p>
+    Our wedding is in Berkeley, CA.
+  </p>
+  <div class="banner" id="banner1"></div>
+  <h1 style="color: #A9CF7F;">Berkeley</h1>
+  <p>If you're flying, we recommend flights to <em>SFO</em> or <em>OAK.</em>  The <em>Oakland airport</em> is a little closer to Berkeley, but it handles fewer airlines than <em>SFO</em>.</p>
+  <p>Much of the Bay Area&mdash;including Berkeley, San Francsico, and both airports above&mdash;is well served by public transit, namely <em>BART</em>, the subway.  The <em>Downtown Berkeley</em> BART station is a block from <a href="/hotel">Hotel Shattuck</a>.</p>
+  <p>We will provide a <em>shuttle service</em> between Hotel Shattuck and the wedding venue on the evening of the ceremony, so you can get away without a <em>rental car</em>.</p>
+  <div class="banner" id="banner2"></div>
+  <p>Travel to California on horseback is traditional, but not recommended.</p>
+  <div style="height:12px;"></div>
+  <a href="/welcome" class="back">« Back to Main Page</a>
+</div>
+{% endblock body %}
+
+
+{% block scripts %}
+<script type="text/javascript" src="/media/js/sizeBanner.js"></script>
+<script type="text/javascript">
+(function ($) {
+
+  /* Set banner height */
+  sizeBanner($('#banner1'), 1912, 1263);
+  sizeBanner($('#banner2'), 720, 551);
+
+})(jQuery);
+</script>
+{% endblock scripts %}
+

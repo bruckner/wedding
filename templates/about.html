@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+
+{% block head %}
+<style>
+body {
+  background-color: white;
+  font-family: "League Gothic", Helvetica, sans-serif;
+}
+h1 {
+  padding: 10px 0;
+  font-size: 34px;
+  color: black;
+  text-align: center;
+}
+.container {
+  margin: 24px auto;
+  padding: 36px 48px;
+  width: 500px;
+  background-color: #F8F8F8;
+  border: 1px solid #E8FFE8;
+}
+.banner {
+  width: 100%;
+  border: 16px solid white;
+}
+#banner1 {
+  background-image: url("/media/img/goodbadugly.jpg");
+  border-color: black;
+}
+#banner2 {
+  background-image: url("/media/img/goodbadugly.jpg");
+  border-color: black;
+}
+dl {
+  margin: 30px 70px;
+  width: 360px;
+  height: 10em;
+  font-size: 24px;
+  color: black;
+}
+dt {
+  float: left;
+  font-weight: bold;
+  clear: both;
+}
+dd {
+  float: right;
+  clear: right;
+  margin: 0;
+  color: black;
+}
+a {
+  text-decoration: none;
+  color: #CD5400;
+}
+a:hover {
+  text-decoration: underline;
+}
+</style>
+{% endblock head %}
+
+
+{% block body %}
+<div class="container">
+  <div class="banner" id="banner1"></div>
+  <h1>Site Credits</h1>
+  <dl>
+    <dt>Design by</dt>
+      <dd>Daniel BRUCKNER</dd>
+      <dd>Laura BURKHAUSER</dd>
+    <dt>Developed by</dt>
+      <dd>Daniel BRUCKNER</dd>
+    <dt>Fonts by</dt>
+      <dd><a href="http://www.theleagueofmoveabletype.com/">The League of Movable Type</a></dd>
+    <dt>Image credits</dt>
+      <dd>Mrs. KITTY</dd>
+      <dd>Berkeley Historical Plaque Project</dd>
+      <dd>Haas School of Business, UCB</dd>
+    <dt></dt>
+      <dd></dd>
+  </dl>
+  <div style="height:12px;"></div>
+  <a href="/welcome" class="back">« Back to Main Page</a>
+</div>
+{% endblock body %}
+
+
+{% block scripts %}
+<script type="text/javascript" src="/media/js/sizeBanner.js"></script>
+<script type="text/javascript">
+(function ($) {
+
+  /* Set banner height */
+  sizeBanner($('#banner1'), 781, 1021);
+
+})(jQuery);
+</script>
+{% endblock scripts %}
+

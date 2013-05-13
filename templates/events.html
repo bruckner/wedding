@@ -1,0 +1,147 @@
+{% extends "base.html" %}
+
+{% block head %}
+<style>
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  background-color: #F0F0FF;
+  font-family: "League Gothic", Helvetica, sans-serif;
+}
+h1 {
+  padding: 30px 0;
+  font-family: "Linden Hill", Garamond, serif;
+  font-size: 44px;
+}
+.container {
+  margin: 24px auto;
+  padding: 36px 48px;
+  width: 500px;
+  background-color: white;
+  border: 1px solid #E8E8FF;
+}
+.banner {
+  width: 100%;
+  background-image: url("/media/img/afewthings.jpg");
+  border: 16px solid #FCE86A;
+}
+.banner2 {
+  width: 100%;
+  background-image: url("/media/img/catherinebarkley.jpg");
+  border: 16px solid #96BCFF;
+}
+.content {
+}
+.schedule {
+  text-align: center;
+}
+.back {
+  float:right;
+  padding-top:50px;
+  text-decoration: none;
+  color: #00C0A8;
+  font-size: 22px;
+}
+.back:hover {
+  text-decoration: underline;
+  color:#00E0C8;
+}
+.event {
+  padding-bottom:80px;
+  background-image: url("/media/img/prater.png");
+  background-position-x: 50%;
+  background-position-y: 90%;
+  background-repeat: no-repeat;
+  background-size: 80px;
+}
+.event a {
+  color: inherit;
+  text-decoration: none;
+}
+.event a:hover {
+  text-decoration: underline;
+  color: #FFA91A;
+}
+.when {
+  color: #FF0820;
+  font-size: 24px;
+}
+.what {
+  margin-top: -4px;
+  padding-bottom: 8px;
+  font-size: 56px;
+}
+.where {
+  padding-bottom: 8px;
+  color: #E99615;
+  font-size: 28px;
+}
+.details {
+  font-size:22px;
+  font-family: "Linden Hill", Garamond, serif;
+  font-style: italic;
+}
+</style>
+{% endblock head %}
+
+
+{% block body %}
+<div>
+  <div class="container">
+    <div class="banner"></div>
+    <div class="content">
+      <a href="/welcome" class="back">« Back to Main Page</a>
+      <h1>Schedule of Events</h1>
+      <div class="schedule">
+        <div class="event">
+          <div class="when">Friday, August 16, 9pm-12am</div>
+          <div class="what">Rehearsal Drinks</div>
+          <div class="where"><a href="http://www.thalassabar.com/">Thalassa</a> (<a href="https://maps.google.com/maps?q=Thalassa,+Shattuck+Avenue,+Berkeley,+CA&hl=en&sll=36.914764,-119.311523&sspn=11.621134,21.401367&oq=thala&hq=Thalassa,&hnear=Shattuck+Ave,+Berkeley,+California&t=m&z=15&iwloc=A">2367 Shattuck Ave, Berkeley</a>)</div>
+          <div class="details">Events begin Friday night with an informal reception at Thalassa, where guests can sip cocktails (or beer), play pool (or Streetfighter II), and reunite with the gang.</div>
+        </div>
+
+        <div class="event">
+          <div class="when">Saturday, August 17, 6pm-11pm</div>
+          <div class="what">Ceremony and Reception</div>
+          <div class="where"><a href="http://www.lawrencehallofscience.org/">The Lawrence Hall of Science</a> (<a href="https://maps.google.com/maps?q=Lawrence+Hall+of+Science,+Centennial+Drive,+Berkeley,+CA&hl=en&sll=37.269174,-119.306607&sspn=11.567869,21.401367&oq=lawren&hq=Lawrence+Hall+of+Science,+Centennial+Drive,+Berkeley,+CA&t=m&z=15&iwloc=A">1 Centennial Dr, Berkeley</a>)</div>
+          <div class="details">Our ceremony will take place on the plaza of the Lawrence Hall of Science. A shuttle will leave from Hotel Shattuck at 5:30, or guests can drive to the Hall themselves—there will be free parking. Follow the signs.</div>
+        </div>
+
+        <div class="event">
+          <div class="when">Sunday, August 17, 12am-2am</div>
+          <div class="what">After the party, there’s…</div>
+          <div class="where">TBD</div>
+          <div class="details">A shuttle will take guests from the Lawrence Hall of Science to the Hotel Shattuck. From there we can head back to Thalassa, or to any of the other welcoming bars on Shattuck Avenue.</div>
+        </div>
+
+        <div class="event">
+          <div class="when">Sunday, August 17, 10am – 2pm</div>
+          <div class="what">Send-off brunch</div>
+          <div class="where">TBD</div>
+          <div class="details">Don’t leave without stopping by the send-off brunch for coffee, breakfast treats, and hugs all around.</div>
+        </div>
+      </div>
+      <a href="/welcome" class="back" style="padding:0;">« Back to Main Page</a>
+      <div style="clear:both;margin-bottom:20px;"></div>
+      <div class="banner2"></div>
+    </div>
+  </div>
+</div>
+{% endblock body%}
+
+
+{% block scripts %}
+<script type="text/javascript" src="/media/js/sizeBanner.js"></script>
+<script type="text/javascript">
+(function ($) {
+
+ /* Set banner height */
+ sizeBanner($('.banner'), 1021, 781);
+ sizeBanner($('.banner2'), 720, 551);
+
+})(jQuery);
+</script>
+
+{% endblock scripts %}

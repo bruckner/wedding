@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block head %}
+<style>
+body {
+  background-color: black;
+  font-family: "Chunk", "Courier New", serif;
+}
+a {
+  text-decoration: none;
+  color: #349E89;
+}
+a:hover {
+  text-decoration: underline;
+}
+h1 {
+  padding: 10px 0;
+  font-size: 44px;
+  color: #CE4E21;
+  text-align: right;
+}
+.container {
+  margin: 24px auto;
+  padding: 36px 48px;
+  width: 500px;
+  background-color: #E0E0E0;
+  border: 1px solid #E8FFE8;
+}
+.banner {
+  width: 100%;
+  border: 16px solid white;
+}
+#banner1 {
+  background-image: url("/media/img/hottub.jpg");
+  border-color: black;
+}
+</style>
+{% endblock head %}
+
+
+{% block body %}
+<div class="container">
+  <div class="banner" id="banner1"></div>
+  <div style="height:12px;"></div>
+  <a href="/welcome" class="back">« Back to Main Page</a>
+</div>
+{% endblock body %}
+
+
+{% block scripts %}
+<script type="text/javascript" src="/media/js/sizeBanner.js"></script>
+<script type="text/javascript">
+(function ($) {
+
+  /* Set banner height */
+  sizeBanner($('#banner1'), 720, 551);
+
+})(jQuery);
+</script>
+{% endblock scripts %}
+
